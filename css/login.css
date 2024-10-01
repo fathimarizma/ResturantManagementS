@@ -1,0 +1,82 @@
+/* General Styling */
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  /* Container Styling */
+  .container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 350px;
+  }
+
+  /* Heading Styling */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: green;
+  }
+
+  /* Form Input Styling */
+  input {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+    border-radius: 4px; /* Rounded corners */
+  }
+
+  /* Input Focus Styling */
+  input:focus {
+    outline: none;
+    background: #e8e8e8;
+  }
+
+  /* Button Styling */
+  .btn {
+    background-color: green;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    opacity: 0.9;
+  }
+
+  /* Button Hover Effect */
+  .btn:hover {
+    opacity: 1;
+  }
+
+  /* Error Message Styling */
+  #error-msg {
+    color: red;
+    display: none;
+    margin-top: 10px;
+  }
+
+  /* Responsive Design - Media Query for Smaller Screens */
+  @media (max-width: 600px) {
+   body{
+   
+    min-height: 80vh;
+   }
+    .container {
+      margin: 0 1rem;
+      width: 80%; 
+    }
+
+    input {
+      width: 90%; 
+    }
+  }

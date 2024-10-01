@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart POS || Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>SmartPOS Login</h2>
+      <form>
+        <div class="formDiv">
+          <!-- Username Input -->
+          <div>
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter Username"
+              required
+            />
+          </div>
+
+          <!-- Password Input -->
+          <div>
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn">Login</button>
+
+          <!-- Error Message -->
+          <div id="error-msg"></div>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

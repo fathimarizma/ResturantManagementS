@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/orders.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebarL">
+        <div class="logo">
+          <span class="logo-text">SmartPOS</span>
+        </div>
+        <ul class="menu">
+          <li class="menu-item active" data-menu="dashboard">
+            <i class="fas fa-home"></i>
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item" data-menu="food">
+            <i class="fas fa-utensils"></i>
+            <a href="all_Dishes.html">Dishes</a>
+          </li>
+          <li class="menu-item" data-menu="orders">
+            <i class="fas fa-receipt"></i>
+            <a href="All_Orders.html">Orders</a>
+          </li>
+          <li class="menu-item" data-menu="customers">
+            <i class="fas fa-users"></i>
+            <a href="all_Customers.html">Customers</a>
+          </li>
+          <li class="menu-item" data-menu="settings">
+            <i class="fas fa-refresh"></i>
+            <a href="settings.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <div class="header-section">
+          <h2>Customer Orders</h2>
+          <!-- Print Button -->
+          <button onclick="printOrderReport()">Print Order Report</button>
+        </div>
+        <br />
+
+        <!-- Month Filter -->
+        <label for="monthFilter">Filter by Month:</label>
+        <div class="filter-section">
+          <select id="monthFilter">
+            <option value="">Select Month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+
+          <button onclick="filterOrdersByMonth()" class="filter-btn">
+            Filter
+          </button>
+        </div>
+
+        <!-- Orders Table -->
+        <table id="orderTable">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer Name</th>
+              <th>Mobile</th>
+              <th>Total</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Orders will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Order Details Popup -->
+      <div class="popup" id="orderDetailsPopup">
+        <div class="popup-content">
+          <span class="close" onclick="closeOrderDetailsPopup()">×</span>
+          <div id="orderDetails"></div>
+        </div>
+      </div>
+    </div>
+    <div id="printOrderReport" style="display: none">
+      <!-- This will hold the details for printing -->
+    </div>
+
+    <script src="js/orders.js"></script>
+  </body>
+</html>

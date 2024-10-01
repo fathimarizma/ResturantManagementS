@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart POS || Dishes Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dishes.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebarL">
+        <div class="logo">
+          <span class="logo-text">SmartPOS</span>
+        </div>
+        <ul class="menu">
+          <li class="menu-item active" data-menu="dashboard">
+            <i class="fas fa-home"></i>
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item" data-menu="food">
+            <i class="fas fa-utensils"></i>
+            <a href="all_Dishes.html">Dishes</a>
+          </li>
+          <li class="menu-item" data-menu="orders">
+            <i class="fas fa-receipt"></i>
+            <a href="All_Orders.html">Orders</a>
+          </li>
+          <li class="menu-item" data-menu="customers">
+            <i class="fas fa-users"></i>
+            <a href="all_Customers.html">Customers</a>
+          </li>
+          <li class="menu-item" data-menu="settings">
+            <i class="fas fa-refresh"></i>
+            <a href="settings.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+      <div class="contnent">
+        <h2>Food Dish Management</h2>
+        <br />
+
+        <button onclick="openAddDishPopup()">Add New Dish</button>
+
+        <table id="dishTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dishes will be loaded here -->
+          </tbody>
+        </table>
+
+        <!-- Add Dish Popup Form -->
+        <div id="addDishPopup" class="popup">
+          <div class="popup-content">
+            <span class="close" onclick="closePopup('addDishPopup')">×</span>
+            <h2>Add New Dish</h2>
+            <form id="addDishForm">
+              <label for="dishName">Name:</label><br />
+              <input type="text" id="dishName" name="dishName" required /><br />
+
+              <label for="dishCategory">Category:</label><br />
+              <select id="dishCategory" name="dishCategory" required>
+                <option value="all">All</option>
+                <option value="burger">Burger</option>
+                <option value="submarines">Submarines</option>
+                <option value="fires">Fries</option>
+                <option value="pasta">Pasta</option>
+                <option value="chicken">Chicken</option>
+                <option value="beverages">Beverages</option></select
+              ><br />
+
+              <label for="dishPrice">Price:</label><br />
+              <input
+                type="number"
+                id="dishPrice"
+                name="dishPrice"
+                required
+              /><br />
+              <label for="dishImage">Image URL:</label><br />
+              <input
+                type="file"
+                id="dishImage"
+                name="dishImage"
+                accept="image/*"
+                required
+              /><br /><br />
+              <button type="submit">Add Dish</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="editDishPopup" class="popup">
+          <div class="popup-content">
+            <span class="close" onclick="closePopup('editDishPopup')">×</span>
+            <h2>Edit Dish</h2>
+            <form id="editDishForm">
+              <input type="hidden" id="editDishIndex" />
+              <label for="editDishName">Name:</label><br />
+              <input
+                type="text"
+                id="editDishName"
+                name="editDishName"
+                required
+              /><br />
+
+              <label for="editDishCategory">Category:</label><br />
+              <select id="editDishCategory" name="editDishCategory" required>
+                <option value="all">All</option>
+                <option value="burger">Burger</option>
+                <option value="submarines">Submarines</option>
+                <option value="fires">Fries</option>
+                <option value="pasta">Pasta</option>
+                <option value="chicken">Chicken</option>
+                <option value="beverages">Beverages</option></select
+              ><br />
+
+              <label for="editDishPrice">Price:</label><br />
+              <input
+                type="number"
+                id="editDishPrice"
+                name="editDishPrice"
+                required
+              /><br />
+              <label for="editDishImage">Image URL:</label><br />
+              <input
+                type="file"
+                id="dishImage"
+                name="dishImage"
+                accept="image/*"
+                required
+              /><br /><br />
+              <button type="submit">Update Dish</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/dishes.js"></script>
+  </body>
+</html>
